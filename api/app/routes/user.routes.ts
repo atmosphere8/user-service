@@ -4,7 +4,7 @@ import {
   get_user_controller,
   create_user_controller,
   remove_user_controller,
-} from "../controllers/index.controller";
+} from "$controllers/index.controller";
 
 const router: Router = Router();
 

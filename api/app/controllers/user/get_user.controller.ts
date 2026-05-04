@@ -1,5 +1,5 @@
 import get_user_service from "$services/user/get_user.service";
-import async_handler from "$middlewares/async-handler.middleware";
+import async_handler from "$middlewares/async/async-handler.middleware";
 
 const get_user_controller = async_handler(async (req, res) => {
   const id = Number(req.params.id);

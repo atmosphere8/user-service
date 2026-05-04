@@ -1,7 +1,7 @@
 import express from "express";
-import db_test from "./postgres/db-test";
-import index_routes from "./app/routes/index.routes";
-import error_handler from "./app/middlewares/error-handler.middleware";
+import db_test from "$postgres/db-test";
+import index_routes from "$routes/index.routes";
+import error_handler from "$middlewares/error/error-handler.middleware";
 
 const app = express();
 const port = process.env.API_PORT || 3000;

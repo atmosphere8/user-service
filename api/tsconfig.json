@@ -21,7 +21,8 @@
       "$services/*": ["./app/services/*"],
       "$middlewares/*": ["./app/middlewares/*"],
       "$types/*": ["./app/types/*"],
-      "$postgres/*": ["./postgres/*"]
+      "$postgres/*": ["./postgres/*"],
+      "$routes/*": ["./app/routes/*"]
     }
   },
   "include": ["app/**/*.ts", "*.ts"],
