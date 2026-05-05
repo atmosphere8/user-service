@@ -1,6 +1,6 @@
 import AppError from "$middlewares/error/app-error.class";
 import { get_user_model } from "$models/index.model";
-import type { UserPublic } from "$types/user/user.dto";
+import type { UserPublic } from "$app/types/user/user.dto";
 
 const get_user_service = async (id: number): Promise<UserPublic> => {
   const result = await get_user_model(id);

@@ -1,6 +1,6 @@
 import AppError from "$middlewares/error/app-error.class";
 import { create_user_model, find_user_model } from "$models/index.model";
-import type { UserCreate, UserPublic } from "$types/user/user.dto";
+import type { UserCreate, UserPublic } from "$app/types/user/user.dto";
 import bcrypt from "bcrypt";
 
 const salt_rounds = 12;
@@ -45,6 +45,7 @@ const create_user_service = async (data: UserCreate): Promise<UserPublic> => {
     name: name_trimmed,
     email: email_trimmed,
     password: hashed_password,
+    role: "user",
   });
 
   if (!result) {
