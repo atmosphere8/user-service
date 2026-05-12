@@ -1,13 +1,18 @@
 import AppError from "$middlewares/error/app-error.class";
-import { create_user_model, find_user_model } from "$models/index.model";
-import type { UserCreate, UserPublic } from "$app/types/user/user.dto";
+import { create_user_model, get_email } from "$models/index.model";
+import type {
+  UserCreateData,
+  UserPublicResponse,
+} from "$app/types/user/user.dto";
 import bcrypt from "bcrypt";
 
 const salt_rounds = 12;
 const no_spaces_regex = /^\S+$/;
 const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const create_user_service = async (data: UserCreate): Promise<UserPublic> => {
+const create_user_service = async (
+  data: UserCreateData,
+): Promise<UserPublicResponse> => {
   const { password, email, name } = data;
 
   const password_trimmed = password?.trim();
@@ -34,7 +39,7 @@ const create_user_service = async (data: UserCreate): Promise<UserPublic> => {
     throw new AppError("🔴 Password must be at least 6 characters long", 400);
   }
 
-  const existing_user = await find_user_model(email_trimmed);
+  const existing_user = await get_email(email_trimmed);
   if (existing_user) {
     throw new AppError("🔴 Email already in use", 409);
   }

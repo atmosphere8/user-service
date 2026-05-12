@@ -1,4 +1,4 @@
-import type { ErrorRequestHandler } from "$types/app/global.type";
+import type { ErrorRequestHandler } from "$app/types/app/middleware.type";
 import AppError from "$middlewares/error/app-error.class";
 
 const error_handler: ErrorRequestHandler = (error, req, res, next) => {

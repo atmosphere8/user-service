@@ -1,0 +1,19 @@
+import { login_user_service } from "$services/index.service";
+import async_handler from "$middlewares/async/async-handler.middleware";
+
+const login_user_controller = async_handler(async (req, res) => {
+  const { email, password } = req.body;
+
+  const { user, token } = await login_user_service({ email, password });
+
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+    maxAge: 15 * 60 * 1000,
+  });
+
+  res.status(200).json({ user: user });
+});
+
+export default login_user_controller;

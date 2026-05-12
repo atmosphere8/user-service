@@ -1,4 +1,4 @@
-import type { RequestHandler } from "$types/app/global.type";
+import type { RequestHandler } from "$app/types/app/middleware.type";
 
 const async_handler =
   (fn: RequestHandler): RequestHandler =>

@@ -21,10 +21,12 @@
       "$services/*": ["./app/services/*"],
       "$middlewares/*": ["./app/middlewares/*"],
       "$types/*": ["./app/types/*"],
-      "$postgres/*": ["./postgres/*"],
-      "$routes/*": ["./app/routes/*"]
+      "$postgres/*": ["./infrastructure/postgres/*"],
+      "$infrastructure/*": ["./infrastructure/*"],
+      "$routes/*": ["./app/routes/*"],
+      "$config/*": ["./config/*"]
     }
   },
-  "include": ["app/**/*.ts", "*.ts"],
+  "include": ["app/**/*.ts", "*.ts", "postgres/**/*.ts", "config/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

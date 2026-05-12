@@ -1,13 +1,19 @@
 import express from "express";
-import db_test from "$postgres/db-test";
+import db_test from "$postgres/db_test";
 import index_routes from "$routes/index.routes";
 import error_handler from "$middlewares/error/error-handler.middleware";
+import auth_middleware from "$middlewares/auth/auth.middleware";
+import cookieParser from "cookie-parser";
+
+import { port } from "$config/env";
 
 const app = express();
-const port = process.env.API_PORT || 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+// Middleware to parse cookies
+app.use(cookieParser());
 
 // Test database connection on startup
 db_test();
