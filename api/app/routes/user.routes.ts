@@ -5,6 +5,7 @@ import {
   create_user_controller,
   remove_user_controller,
   login_user_controller,
+  logout_controller,
 } from "$controllers/index.controller";
 import auth_middleware from "$middlewares/auth/auth.middleware";
 
@@ -15,5 +16,6 @@ router.get("/get/:id", auth_middleware, get_user_controller);
 router.post("/create", create_user_controller);
 router.delete("/remove/:id", auth_middleware, remove_user_controller);
 router.post("/login", login_user_controller);
+router.post("/logout", logout_controller);
 
 export default router;

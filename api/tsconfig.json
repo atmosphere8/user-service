@@ -24,6 +24,7 @@
       "$postgres/*": ["./infrastructure/postgres/*"],
       "$infrastructure/*": ["./infrastructure/*"],
       "$routes/*": ["./app/routes/*"],
+      "$helpers/*": ["./app/helpers/*"],
       "$config/*": ["./config/*"]
     }
   },
