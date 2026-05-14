@@ -1,8 +1,8 @@
 import { login_user_service } from "$services/index.service";
-import async_handler from "$middlewares/async/async-handler.middleware";
+import async_handler_middleware from "$middlewares/async/async-handler.middleware";
 import { api_response } from "$helpers/index";
 
-const login_user_controller = async_handler(async (req, res) => {
+const login_user_controller = async_handler_middleware(async (req, res) => {
   const { email, password } = req.body;
 
   const { user, token } = await login_user_service({ email, password });

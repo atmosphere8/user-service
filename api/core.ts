@@ -2,7 +2,6 @@ import express from "express";
 import db_test from "$postgres/db_test";
 import index_routes from "$routes/index.routes";
 import error_handler from "$middlewares/error/error-handler.middleware";
-import auth_middleware from "$middlewares/auth/auth.middleware";
 import cookieParser from "cookie-parser";
 
 import { port } from "$config/env";
